@@ -2,9 +2,14 @@ const {expect} = require('chai');
 const caesar = require('../src/caesar');
 
 describe('caesarModule: caesar', () => {
-    it('should return a string if given both input and shift arguments and ignore capital letters', () => {
-        const actual = caesar('ThInKfUl', 1);
+    it('should return a string if given both input and shift arguments', () => {
+        const actual = caesar('thinkful', 1);
         expect(actual).to.be.a('string');
+    });
+    it('should ignore capital letters given in the input and return a string value', () => {
+        const actual = caesar('ThInKfUl', 6);
+        const expected = 'znotqlar';
+        expect(actual).to.equal(expected);
     });
     it('should return false if "shift" is not presents, equal to 0, greater than 25, or less than -25', () => {
         const actual = caesar('thinkful', 34);
