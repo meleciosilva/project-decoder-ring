@@ -14,6 +14,10 @@ describe('substitutionModule: substitution', () => {
         const actual = substitution('thinkful', 'lf73a0z6');
         expect(actual).to.equal(false);
     });
+    it('should return false if the substitution alphabet is missing', () => {
+        const actual = substitution('thinkful');
+        expect(actual).to.equal(false);
+    });
     it('should correctly encode input given a valid substitution alphabet and ignore capital letters', () => {
         const actual = substitution('tHiNkFuL', 'qwertyuiopasdfghjklzxcvbnm');
         const expected = 'ziofayxs';

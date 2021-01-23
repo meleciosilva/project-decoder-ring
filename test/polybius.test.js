@@ -17,12 +17,12 @@ describe('polybiusModule: polybius', () => {
         expect(actual).to.equal(expected);
     });
     it('should maintain spaces throughout when decoding', () => {
-        const actual = polybius('apple seeds');
-        const expected = '1153531351 3451514134';
+        const actual = polybius('1153531351 3451514134', false);
+        const expected = 'apple seeds';
         expect(actual).to.equal(expected);
     });
     it('should return false when decoding if the input amounts to an odd total number of characters', () => {
-        const actual = polybius('123456789', false);
+        const actual = polybius('123456789 1234', false);
         expect(actual).to.equal(false);
     });
     it('should correctly decode the input with the corresponding string values', () => {

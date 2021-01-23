@@ -12,7 +12,7 @@ const polybiusModule = (function () {
   }
   function polybius(input, encode = true) {
     let result = '';
-    if (!encode && input.length % 2 !== 0) return false;
+    if (!encode && input.replace(/\s+/g, '').length % 2 !== 0) return false;
     let inputCharacters;
     // when decoding, converts input into an array of 2-digit values/strings
     if (!encode) { 
